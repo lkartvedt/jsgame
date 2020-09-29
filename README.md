@@ -1,5 +1,5 @@
 # CSCI 445 Javescript Game: Cave Diver 
-## The Fullstack Flapjacks: Lindsey Kartvedt, Charly Whollaston, and Salama Sissoko
+## The Fullstack Flapjacks: Lindsey Kartvedt, Charly Wollaston, and Salama Sissoko
 
 #### Why our game is worth 100 points:
 
