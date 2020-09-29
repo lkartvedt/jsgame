@@ -1,13 +1,13 @@
-#CSCI 445 Javescript Game: Cave Diver 
-The Fullstack Flapjacks: Lindsey Kartvedt, Charly Whollaston, and Salama Sissoko
+# CSCI 445 Javescript Game: Cave Diver 
+## The Fullstack Flapjacks: Lindsey Kartvedt, Charly Whollaston, and Salama Sissoko
 
-Why our game is worth 100 points:
-
-
-What CSS3 features did you use? 
+#### Why our game is worth 100 points:
 
 
-Did you use any cool JavaScript libraries? 
+###### What CSS3 features did you use? 
 
 
-What nifty features of your program were a bear to implement?
+###### Did you use any cool JavaScript libraries? 
+
+
+###### What nifty features of your program were a bear to implement?
