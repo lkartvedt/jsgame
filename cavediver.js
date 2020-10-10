@@ -4,7 +4,7 @@ var y = 0;
 const canvas = document.getElementById("mycanvas");
 const ctx = canvas.getContext("2d");
 const img = new Image();
-img.src = "images/diver.jpg";
+img.src = "images/maleColor1R.PNG";
 img.onload = () =>{
 	ctx.drawImage(img, x, y);
 }
