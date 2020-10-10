@@ -1,6 +1,7 @@
 /*Script modified from https://codepen.io/Jackthomsonn/pen/wModMm*/
 $(function () {
 	$(".game").hide();
+	$(".select").hide();
   var btn = $(".btn");
   btn.on("click", function () {
     $(this).addClass("btn__progress");
@@ -13,7 +14,8 @@ $(function () {
     setTimeout(function () {
       btn.addClass("btn__complete");
 	  $(".container").hide();
-	  $(".game").show();
+	  //$(".game").show();
+	  $(".select").show();
     }, 4400);
   });
 });
