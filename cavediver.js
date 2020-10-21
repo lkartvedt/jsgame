@@ -4,9 +4,14 @@ var y = 0;
 const canvas = document.getElementById("mycanvas");
 const ctx = canvas.getContext("2d");
 const img = new Image();
+const img2 = new Image();
 img.src = "images/maleColor1R.PNG";
+img2.src = "images/test.png";
 img.onload = () =>{
 	ctx.drawImage(img, x, y);
+}
+img2.onload = () =>{
+	ctx.drawImage(img2, 200, -100);
 }
 
 const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
@@ -41,11 +46,13 @@ function up() {
 	y = y - 10;
 	ctx.clearRect(0, 0, mycanvas.width, mycanvas.height);
 	ctx.drawImage(img, x, y);
+	ctx.drawImage(img2, 0, 200);
 }
 function down() {
 	y = y + 10;
 	ctx.clearRect(0, 0, mycanvas.width, mycanvas.height);
 	ctx.drawImage(img, x, y);
+	ctx.drawImage(img2, 0, 200);
 }
 
 
