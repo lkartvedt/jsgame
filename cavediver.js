@@ -1,26 +1,174 @@
-var x = 0;
-var y = 0;
+var x = 220;
+var y = 220;
+var bgx = 0;
+var t = 0;
+var scale = 26;
+var interval_ID = 0;
 //load image onto canvas
 const canvas = document.getElementById("mycanvas");
 const ctx = canvas.getContext("2d");
-const img = new Image();
-const img2 = new Image();
-img.src = "images/maleColor1R.PNG";
-img2.src = "images/test.png";
-img.onload = () =>{
-	ctx.drawImage(img, x, y);
-}
-img2.onload = () =>{
-	ctx.drawImage(img2, 200, -100);
+
+//Start Background Image
+const decorated_background = new Image();
+decorated_background.setAttribute('crossOrigin', 'Anonymous');
+decorated_background.src = "https://i.imgur.com/yz6LZ4m.png"; //images/decorated_background.PNG
+decorated_background.onload = () =>{
+	ctx.drawImage(decorated_background, 0, 0, decorated_background.width * 0.3, decorated_background.height * 0.3);
 }
 
+//Diver 1
+const diver = new Image();
+diver.setAttribute('crossOrigin', 'Anonymous')
+diver.src = "https://i.imgur.com/wW2etM4.png"; //male_color_1.PNG
+
+//Cave Walls
+const  b1 = new Image(); b1.setAttribute('crossOrigin', 'Anonymous'); b1.src = "https://i.imgur.com/zV5hCVX.png";
+const  b2 = new Image(); b2.setAttribute('crossOrigin', 'Anonymous'); b2.src = "https://i.imgur.com/zPaUh4z.png";
+const  b3 = new Image(); b3.setAttribute('crossOrigin', 'Anonymous'); b3.src = "https://i.imgur.com/6bTTZht.png";
+const  b4 = new Image(); b4.setAttribute('crossOrigin', 'Anonymous'); b4.src = "https://i.imgur.com/UFx9UvF.png";
+const  t1 = new Image(); t1.setAttribute('crossOrigin', 'Anonymous'); t1.src = "https://i.imgur.com/639as54.png";
+const  t2 = new Image(); t2.setAttribute('crossOrigin', 'Anonymous'); t2.src = "https://i.imgur.com/6BaUWgd.png";
+const  t3 = new Image(); t3.setAttribute('crossOrigin', 'Anonymous'); t3.src = "https://i.imgur.com/5v2kLiB.png";
+const  t4 = new Image(); t4.setAttribute('crossOrigin', 'Anonymous'); t4.src = "https://i.imgur.com/SrKrpN2.png";
+var bottoms = [b1, b2, b3, b4];
+var tops = [t1, t2, t3, t4];
+var top_indices = [0, 1];
+var bottom_indices = [2, 3];
+
+//Cave Walls for Collision
+const  b1_b = new Image(); b1_b.setAttribute('crossOrigin', 'Anonymous'); b1_b.src = "https://i.imgur.com/KRayrTY.png";
+const  b2_b = new Image(); b2_b.setAttribute('crossOrigin', 'Anonymous'); b2_b.src = "https://i.imgur.com/DBGTHXw.png";
+const  b3_b = new Image(); b3_b.setAttribute('crossOrigin', 'Anonymous'); b3_b.src = "https://i.imgur.com/kVrlhfF.png";
+const  b4_b = new Image(); b4_b.setAttribute('crossOrigin', 'Anonymous'); b4_b.src = "https://i.imgur.com/CUwN4Js.png";
+const  t1_b = new Image(); t1_b.setAttribute('crossOrigin', 'Anonymous'); t1_b.src = "https://i.imgur.com/oWdRCjR.png";
+const  t2_b = new Image(); t2_b.setAttribute('crossOrigin', 'Anonymous'); t2_b.src = "https://i.imgur.com/fdJng4y.png";
+const  t3_b = new Image(); t3_b.setAttribute('crossOrigin', 'Anonymous'); t3_b.src = "https://i.imgur.com/hzW8h1s.png";
+const  t4_b = new Image(); t4_b.setAttribute('crossOrigin', 'Anonymous'); t4_b.src = "https://i.imgur.com/azOZ0jo.png";
+var bottoms_b = [b1_b, b2_b, b3_b, b4_b];
+var tops_b = [t1_b, t2_b, t3_b, t4_b];
+var top_b_indices = [0, 1];
+var bottom_b_indices = [2, 3];
+var diver_points_x = [0, 251, 1646, 2048, 1895, 1523, 67];
+var diver_points_y = [388, 826, 638, 376, 235, 192, 325];
+
+function startGame() {
+  const start_button = document.getElementById("start_button");
+  start_button.style.display = "none";
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  interval_ID = setInterval(renderScene, 16.667);
+}
+
+
+function drawDiver() {
+	ctx.drawImage(diver, x, y, diver.width / scale, diver.height / scale);
+}
+
+function drawUpperCaveWalls() {
+	ctx.drawImage(tops[top_indices[0]], bgx, 0, canvas.width, tops[top_indices[0]].height * 0.3);
+	ctx.drawImage(tops[top_indices[1]], bgx + canvas.width, 0, canvas.width, tops[top_indices[1]].height * 0.3);
+}
+
+function drawLowerCaveWalls() {
+	ctx.drawImage(bottoms[bottom_indices[0]], bgx, 0, canvas.width, bottoms[bottom_indices[0]].height * 0.3);
+	ctx.drawImage(bottoms[bottom_indices[1]], bgx + canvas.width, 0, canvas.width, bottoms[bottom_indices[1]].height * 0.3);
+}
+
+function collisionCheck(){
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+	ctx.drawImage(tops_b[top_b_indices[0]], bgx, 0, canvas.width, tops_b[top_b_indices[0]].height * 0.3);
+	ctx.drawImage(tops_b[top_b_indices[1]], bgx + canvas.width, 0, canvas.width, tops_b[top_b_indices[1]].height * 0.3);
+
+	ctx.drawImage(bottoms_b[bottom_b_indices[0]], bgx, 0, canvas.width, bottoms_b[bottom_b_indices[0]].height * 0.3);
+	ctx.drawImage(bottoms_b[bottom_b_indices[1]], bgx + canvas.width, 0, canvas.width, bottoms_b[bottom_b_indices[1]].height * 0.3);
+	
+	for(let i = 0; i < diver_points_y.length; i++){
+		var rgba = ctx.getImageData(x+diver_points_x[i] / scale, y+diver_points_y[i] / scale, 1, 1).data.reduce((a, b) => a + b, 0);
+		if(rgba == 255){
+			return true;
+		}
+	}
+
+	return false;
+}
+
+function gameOver(){
+	clearInterval(interval_ID);
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	ctx.drawImage(decorated_background, 0, 0, decorated_background.width * 0.3, decorated_background.height * 0.3);
+	const end_stats = document.getElementById("end_stats");
+	const time_alive = document.getElementById("time_alive").innerHTML =  Math.round(t/60) + " seconds";
+  	end_stats.style.display = "block";
+
+  	// const play_again_btn = document.getElementById("play_again_btn");
+  	// end_stats.play_again_btn.display = "block";
+
+  	// const home_btn = document.getElementById("home_btn");
+  	// home_btn.style.display = "block";
+}
+
+function renderScene(){
+	bgx -= 1 + 0.25*(t/600);
+	t++;
+
+	if(up_flag){
+		y -= 2  + 0.25*(t/600);
+	}
+
+	if(down_flag){
+		y += 2  + 0.25*(t/600);
+	}
+
+	if(left_flag){
+		x -= 2  + 0.25*(t/600);
+		if(x < 0) {
+			x = 0;
+		}
+	}
+
+	if(right_flag){
+		x += 2  + 0.25*(t/600);
+		if(x > canvas.width - diver.width / scale) {
+			x = canvas.width - diver.width / scale;
+		}
+	}
+
+	if(bgx < -canvas.width){
+		var rand_cave = Math.floor(Math.random() * 4);
+		top_indices[0] = top_indices[1];
+		top_indices[1] = rand_cave;
+		top_b_indices[0] = top_b_indices[1];
+		top_b_indices[1] = rand_cave;
+
+		rand_cave = Math.floor(Math.random() * 4);
+		bottom_indices[0] = bottom_indices[1];
+		bottom_indices[1] = rand_cave;
+		bottom_b_indices[0] = bottom_b_indices[1];
+		bottom_b_indices[1] = rand_cave;
+
+		bgx = 0;
+	}
+
+	if(collisionCheck()) {
+		gameOver();
+		return;
+	}
+
+
+	//ctx.clearRect(0, 0, canvas.width, canvas.height);
+	drawUpperCaveWalls();
+	drawLowerCaveWalls();
+	drawDiver();
+}
+
+
+//DARK MODE CODE START///////////////////////////////////////////////////////////////////////////////
 const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
 
-
 if (currentTheme) {
     document.documentElement.setAttribute('data-theme', currentTheme);
-
     if (currentTheme === 'dark') {
         toggleSwitch.checked = true;
     }
@@ -38,39 +186,57 @@ function switchTheme(e) {
 }
 
 toggleSwitch.addEventListener('change', switchTheme, false);
-
-document.addEventListener('keydown', checkKeyPressed, true);
-
-
-function up() {
-	y = y - 10;
-	ctx.clearRect(0, 0, mycanvas.width, mycanvas.height);
-	ctx.drawImage(img, x, y);
-	ctx.drawImage(img2, 0, 200);
-}
-function down() {
-	y = y + 10;
-	ctx.clearRect(0, 0, mycanvas.width, mycanvas.height);
-	ctx.drawImage(img, x, y);
-	ctx.drawImage(img2, 0, 200);
-}
+//DARK MODE CODE END/////////////////////////////////////////////////////////////////////////////////
 
 
+//PLAYER MOVEMENT CODE START/////////////////////////////////////////////////////////////////////////
+document.addEventListener('keydown', checkKeyDown, true);
+document.addEventListener('keyup', checkKeyUp, true);
+
+var up_flag = false;
+var down_flag = false;
+var left_flag = false;
+var right_flag = false;
 
 //write function for checkKeyPressed
-function checkKeyPressed(event){
-	//alert("checks key pressed");
-	switch(event.keyCode) {
+function checkKeyDown(e){
+	e.view.event.preventDefault();
+	switch(e.keyCode) {
+		case 37:
+			left_flag = true;
+			break;
 		//up key pressed 38
 		case 38:
-			//alert("up");
-			up();
+			up_flag = true;
+			break;
+		case 39:
+			right_flag = true;
 			break;
 		//down key pressed 40
 		case 40:
-			//alert("down");
-			down();
+			down_flag = true;
 			break;		
 	}
 }
+
+function checkKeyUp(e){
+	e.view.event.preventDefault();
+	switch(e.keyCode) {
+		case 37:
+			left_flag = false;
+			break;
+		//up key pressed 38
+		case 38:
+			up_flag = false;
+			break;
+		case 39:
+			right_flag = false;
+			break;
+		//down key pressed 40
+		case 40:
+			down_flag = false;
+			break;		
+	}
+}
+//PLAYER MOVEMENT CODE END///////////////////////////////////////////////////////////////////////////
 

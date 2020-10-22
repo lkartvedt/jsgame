@@ -2,7 +2,7 @@
     --primary-color: #f5926e;   /*muted peach*/
     --secondary-color: #cd7150; /*dark coral*/
     --font-color: #051a2a;      /*dark navy*/
-    --heading-color: #8067d8;   /*vibrant lavendar*/
+    --heading-color: #8067d8;   /*vibrant lavender*/
     --bg-color: white;          /*white*/
 }
 
@@ -10,7 +10,7 @@
     --primary-color: #cd7150;   /*dark coral*/
     --secondary-color: #f5926e; /*muted peach*/
     --font-color: white;        /*white*/
-    --heading-color: #8067d8;   /*vibrant lavendar*/
+    --heading-color: #8067d8;   /*vibrant lavender*/
     --bg-color: #051a2a;        /*dark navy*/
 }
 
@@ -50,6 +50,82 @@ h2{
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
 }
+
+#start_button {
+    background: white;
+    width: 250px;
+    height: 75px;
+    padding: 15px;
+    color: #f5926e;
+    border-radius: 3em;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline:none;
+    margin: auto;
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -125px; /* Negative half of width. */
+}
+
+#end_stats {
+    background: white;
+    opacity: 0.9;
+    width: 500px;
+    height: 250px;
+    padding: 15px;
+    color: #f5926e;
+    border-radius: 3em;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline:none;
+    margin: auto;
+    display: none;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -250px;
+    margin-top: -70px;
+}
+
+/*#play_again_button {
+    background: white;
+    width: 250px;
+    height: 75px;
+    padding: 15px;
+    color: #f5926e;
+    border-radius: 3em;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline:none;
+    margin: auto;
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -125px;
+}
+*/
+
 
 #gameplay_instructions {
     color: var(--font-color);

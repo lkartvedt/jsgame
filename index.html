@@ -13,17 +13,15 @@
     </head> 
 
     <body>
-	<div class="container">
-		<h1>Cave Diver</h1>
-		<div class ="btn">Start Game</div>
-	</div>
-	<div class="select">
+
+<!-- 	<div class="select">
 		<h2>Choose Your Diver</h2>
 		<button class="diverA" onclick="function()">Diver A</button>
 		<img id="DiverA" src="images/maleColor1R.png" width="100" height="50">
 		<button class="diverB" onclick="function()">Diver B</button>
 		<img id="DiverA" src="images/maleColor2R.png" width="100" height="50">
-	</div>
+	</div> -->
+
 	<div class="game">
         <nav>
             <div class="theme-switch-wrapper">
@@ -31,19 +29,26 @@
                     <input type="checkbox" id="checkbox" />
                     <div class="slider round"></div>
                 </label>                    
-
                 <em>Dark Mode</em>
             </div>
         </nav>
 
-        <h1>Cave Diver<h2>
+        <button id="start_button" onclick="startGame()">Start</button>
+<!--          <button id="play_again_btn" onclick="startGame()">Play Again</button> -->
+        <div id="end_stats">
+          <h1>Game Over<h1>
+          <h2>Time:<h2>
+          <p id="time_alive"></p>
+        </div>
 
-        <canvas id="mycanvas" width="800" height="400">
+        <h1>Cave Diver<h1>
+
+        <canvas id="mycanvas" width="800" height="464">
           Your browser does not support the canvas element.
        </canvas> 
 
        <h2>How to Play<h2>
-       <p id="gameplay_instructions">lorem ipsum blah blah blah blah blah</p>
+       <p id="gameplay_instructions">Use the arrow keys to move the player through the cave, seeking out coins and treasure boxes. Watch out for the cave walls though, touching them ends the game. The game will speed up because longer you dive, the harder it is to stay alive! </p>
     </div>
 	   <br>
        <br>
@@ -54,10 +59,9 @@
 	   
 	   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
  <!--     <script src="loadscreen.js"></script> -->
-	   <script src="selectionScreen.js"></script>
+<!-- 	   <script src="selectionScreen.js"></script> -->
        <script src="cavediver.js"></script>
-	   <script src="background.js"></script>
-	   <script src="cave.js"></script>
+<!-- 	   <script src="background.js"></script> -->
 	   <script onkeydown="checkKeyPressed()">
     </body>    
 </html> 
