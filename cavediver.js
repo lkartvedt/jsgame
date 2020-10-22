@@ -68,11 +68,11 @@ function resetGame(){
 	y = 250;
 	bgx = 0;
 	t = 0;
-	scale = 26;
 	interval_ID = 0;
 	top_b_indices = [0, 1];
 	bottom_b_indices = [2, 3];
 	top_indices = [0, 1];
+	bottom_indices = [2, 3];
 
   	end_stats.style.display = "none";
   	play_again_button.style.display = "none";
@@ -196,33 +196,6 @@ function renderScene(){
 	drawLowerCaveWalls();
 	drawDiver();
 }
-
-
-//DARK MODE CODE START///////////////////////////////////////////////////////////////////////////////
-const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-
-if (currentTheme) {
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    if (currentTheme === 'dark') {
-        toggleSwitch.checked = true;
-    }
-}
-
-function switchTheme(e) {
-    if (e.target.checked) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-    }
-    else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-    }    
-}
-
-toggleSwitch.addEventListener('change', switchTheme, false);
-//DARK MODE CODE END/////////////////////////////////////////////////////////////////////////////////
-
 
 //PLAYER MOVEMENT CODE START/////////////////////////////////////////////////////////////////////////
 document.addEventListener('keydown', checkKeyDown, true);
