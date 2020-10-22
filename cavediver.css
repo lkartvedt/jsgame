@@ -51,6 +51,10 @@ h2{
     font-family: 'Montserrat', sans-serif;
 }
 
+.e_s {
+    color: #f5926e;
+}
+
 #start_button {
     background: white;
     width: 250px;
@@ -75,13 +79,12 @@ h2{
     margin-left: -125px; /* Negative half of width. */
 }
 
-#end_stats {
-    background: white;
-    opacity: 0.9;
-    width: 500px;
-    height: 250px;
+#play_again_button {
+    background:  #051a2a;
+    width: 175px;
+    height: 50px;
     padding: 15px;
-    color: #f5926e;
+    color: white;
     border-radius: 3em;
     border: none;
     cursor: pointer;
@@ -97,16 +100,16 @@ h2{
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-left: -250px;
-    margin-top: -70px;
+    margin-top: 75px;
+    margin-left: 25px;
 }
 
-/*#play_again_button {
-    background: white;
-    width: 250px;
-    height: 75px;
+#home_button {
+    background: #051a2a;
+    width: 175px;
+    height: 50px;
     padding: 15px;
-    color: #f5926e;
+    color: white;
     border-radius: 3em;
     border: none;
     cursor: pointer;
@@ -114,7 +117,7 @@ h2{
     text-decoration: none;
     outline:none;
     margin: auto;
-    display: block;
+    display: none;
     font-size: 20px;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
@@ -122,10 +125,31 @@ h2{
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-left: -125px;
+    margin-left: -200px;
+    margin-top: 75px;
 }
-*/
 
+#end_stats {
+    background: white;
+    opacity: 0.9;
+    width: 500px;
+    height: 250px;
+    padding: 15px;
+    border-radius: 3em;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline:none;
+    margin: auto;
+    display: none;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -250px;
+    margin-top: -70px;
+}
 
 #gameplay_instructions {
     color: var(--font-color);

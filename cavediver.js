@@ -1,5 +1,5 @@
-var x = 220;
-var y = 220;
+var x = 180;
+var y = 250;
 var bgx = 0;
 var t = 0;
 var scale = 26;
@@ -7,6 +7,11 @@ var interval_ID = 0;
 //load image onto canvas
 const canvas = document.getElementById("mycanvas");
 const ctx = canvas.getContext("2d");
+
+const start_button = document.getElementById("start_button");
+const end_stats = document.getElementById("end_stats");
+const home_button = document.getElementById("home_button");
+const play_again_button = document.getElementById("play_again_button");
 
 //Start Background Image
 const decorated_background = new Image();
@@ -52,11 +57,56 @@ var diver_points_x = [0, 251, 1646, 2048, 1895, 1523, 67];
 var diver_points_y = [388, 826, 638, 376, 235, 192, 325];
 
 function startGame() {
-  const start_button = document.getElementById("start_button");
   start_button.style.display = "none";
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   interval_ID = setInterval(renderScene, 16.667);
+}
+
+function resetGame(){
+	x = 180;
+	y = 250;
+	bgx = 0;
+	t = 0;
+	scale = 26;
+	interval_ID = 0;
+	top_b_indices = [0, 1];
+	bottom_b_indices = [2, 3];
+	top_indices = [0, 1];
+
+  	end_stats.style.display = "none";
+  	play_again_button.style.display = "none";
+  	home_button.style.display = "none";
+}
+
+function gameOver(){
+	clearInterval(interval_ID);
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	ctx.drawImage(decorated_background, 0, 0, decorated_background.width * 0.3, decorated_background.height * 0.3);
+	if(Math.round(t/60) == 1){
+		const time_alive = document.getElementById("time_alive").innerHTML =  "1 second";
+	}else{
+		const time_alive = document.getElementById("time_alive").innerHTML =  Math.round(t/60) + " seconds";
+	}
+
+  	end_stats.style.display = "block";
+  	play_again_button.style.display = "block";
+  	home_button.style.display = "block";
+}
+
+function home(){
+
+	resetGame();
+
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	ctx.drawImage(decorated_background, 0, 0, decorated_background.width * 0.3, decorated_background.height * 0.3);
+	start_button.style.display = "block";
+
+}
+
+function playAgain(){
+	resetGame();
+	startGame();
 }
 
 
@@ -91,21 +141,6 @@ function collisionCheck(){
 	}
 
 	return false;
-}
-
-function gameOver(){
-	clearInterval(interval_ID);
-	ctx.clearRect(0, 0, canvas.width, canvas.height);
-	ctx.drawImage(decorated_background, 0, 0, decorated_background.width * 0.3, decorated_background.height * 0.3);
-	const end_stats = document.getElementById("end_stats");
-	const time_alive = document.getElementById("time_alive").innerHTML =  Math.round(t/60) + " seconds";
-  	end_stats.style.display = "block";
-
-  	// const play_again_btn = document.getElementById("play_again_btn");
-  	// end_stats.play_again_btn.display = "block";
-
-  	// const home_btn = document.getElementById("home_btn");
-  	// home_btn.style.display = "block";
 }
 
 function renderScene(){
@@ -215,6 +250,9 @@ function checkKeyDown(e){
 		//down key pressed 40
 		case 40:
 			down_flag = true;
+			break;
+		case 13:
+			startGame();
 			break;		
 	}
 }
@@ -239,4 +277,5 @@ function checkKeyUp(e){
 	}
 }
 //PLAYER MOVEMENT CODE END///////////////////////////////////////////////////////////////////////////
+
 
