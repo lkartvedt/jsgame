@@ -39,28 +39,28 @@ diver2.src = "https://i.imgur.com/FJc6tu3.png"; //male_color_2.PNG
 var diver = diver1; //default
 
 //Cave Walls
-const  b1 = new Image(); b1.setAttribute('crossOrigin', 'Anonymous'); b1.src = "https://i.imgur.com/zV5hCVX.png";
-const  b2 = new Image(); b2.setAttribute('crossOrigin', 'Anonymous'); b2.src = "https://i.imgur.com/zPaUh4z.png";
-const  b3 = new Image(); b3.setAttribute('crossOrigin', 'Anonymous'); b3.src = "https://i.imgur.com/6bTTZht.png";
-const  b4 = new Image(); b4.setAttribute('crossOrigin', 'Anonymous'); b4.src = "https://i.imgur.com/UFx9UvF.png";
-const  t1 = new Image(); t1.setAttribute('crossOrigin', 'Anonymous'); t1.src = "https://i.imgur.com/639as54.png";
-const  t2 = new Image(); t2.setAttribute('crossOrigin', 'Anonymous'); t2.src = "https://i.imgur.com/6BaUWgd.png";
-const  t3 = new Image(); t3.setAttribute('crossOrigin', 'Anonymous'); t3.src = "https://i.imgur.com/5v2kLiB.png";
-const  t4 = new Image(); t4.setAttribute('crossOrigin', 'Anonymous'); t4.src = "https://i.imgur.com/SrKrpN2.png";
+const  b1 = new Image(); b1.setAttribute('crossOrigin', 'Anonymous'); b1.src = "https://i.imgur.com/dwUS53c.png";
+const  b2 = new Image(); b2.setAttribute('crossOrigin', 'Anonymous'); b2.src = "https://i.imgur.com/qlSYdf8.png";
+const  b3 = new Image(); b3.setAttribute('crossOrigin', 'Anonymous'); b3.src = "https://i.imgur.com/wJ4bFCf.png";
+const  b4 = new Image(); b4.setAttribute('crossOrigin', 'Anonymous'); b4.src = "https://i.imgur.com/LhpmCoE.png";
+const  t1 = new Image(); t1.setAttribute('crossOrigin', 'Anonymous'); t1.src = "https://i.imgur.com/6lhX7kc.png";
+const  t2 = new Image(); t2.setAttribute('crossOrigin', 'Anonymous'); t2.src = "https://i.imgur.com/KNrlkLh.png";
+const  t3 = new Image(); t3.setAttribute('crossOrigin', 'Anonymous'); t3.src = "https://i.imgur.com/xxjym4d.png";
+const  t4 = new Image(); t4.setAttribute('crossOrigin', 'Anonymous'); t4.src = "https://i.imgur.com/DbnM9fV.png";
 var bottoms = [b1, b2, b3, b4];
 var tops = [t1, t2, t3, t4];
 var top_indices = [0, 1];
 var bottom_indices = [2, 3];
 
 //Cave Walls for Collision
-const  b1_b = new Image(); b1_b.setAttribute('crossOrigin', 'Anonymous'); b1_b.src = "https://i.imgur.com/KRayrTY.png";
-const  b2_b = new Image(); b2_b.setAttribute('crossOrigin', 'Anonymous'); b2_b.src = "https://i.imgur.com/DBGTHXw.png";
-const  b3_b = new Image(); b3_b.setAttribute('crossOrigin', 'Anonymous'); b3_b.src = "https://i.imgur.com/kVrlhfF.png";
-const  b4_b = new Image(); b4_b.setAttribute('crossOrigin', 'Anonymous'); b4_b.src = "https://i.imgur.com/CUwN4Js.png";
-const  t1_b = new Image(); t1_b.setAttribute('crossOrigin', 'Anonymous'); t1_b.src = "https://i.imgur.com/oWdRCjR.png";
-const  t2_b = new Image(); t2_b.setAttribute('crossOrigin', 'Anonymous'); t2_b.src = "https://i.imgur.com/fdJng4y.png";
-const  t3_b = new Image(); t3_b.setAttribute('crossOrigin', 'Anonymous'); t3_b.src = "https://i.imgur.com/hzW8h1s.png";
-const  t4_b = new Image(); t4_b.setAttribute('crossOrigin', 'Anonymous'); t4_b.src = "https://i.imgur.com/azOZ0jo.png";
+const  b1_b = new Image(); b1_b.setAttribute('crossOrigin', 'Anonymous'); b1_b.src = "https://i.imgur.com/T5bydCP.png";
+const  b2_b = new Image(); b2_b.setAttribute('crossOrigin', 'Anonymous'); b2_b.src = "https://i.imgur.com/AEG3jlH.png";
+const  b3_b = new Image(); b3_b.setAttribute('crossOrigin', 'Anonymous'); b3_b.src = "https://i.imgur.com/iQqHUw0.png";
+const  b4_b = new Image(); b4_b.setAttribute('crossOrigin', 'Anonymous'); b4_b.src = "https://i.imgur.com/BMawcXu.png";
+const  t1_b = new Image(); t1_b.setAttribute('crossOrigin', 'Anonymous'); t1_b.src = "https://i.imgur.com/fGigIkK.png";
+const  t2_b = new Image(); t2_b.setAttribute('crossOrigin', 'Anonymous'); t2_b.src = "https://i.imgur.com/oF9ZJPO.png";
+const  t3_b = new Image(); t3_b.setAttribute('crossOrigin', 'Anonymous'); t3_b.src = "https://i.imgur.com/KR7Ugos.png";
+const  t4_b = new Image(); t4_b.setAttribute('crossOrigin', 'Anonymous'); t4_b.src = "https://i.imgur.com/nGlu3Hh.png";
 var bottoms_b = [b1_b, b2_b, b3_b, b4_b];
 var tops_b = [t1_b, t2_b, t3_b, t4_b];
 var top_b_indices = [0, 1];
