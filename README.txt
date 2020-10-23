@@ -27,4 +27,7 @@ Team Members: Lindsey Kartvedt, Charly Wollaston, and Salama Sissoko
 	issue faced was detecting collision between the diver and the cave walls. Initial attempts of checking the pixel color the diver touched failed due to 
 	security measures taken by web browsers. In other words it was not allowed to call the function getImageData() on the files used on the canvases. The way 
 	around this was to host all of the game images on imgur.
+	
+5. NOTE TO GRADER:
+	Images are being hosted on imgur. This compresses the images. The grader will need to have internet connection to play the game.
 
