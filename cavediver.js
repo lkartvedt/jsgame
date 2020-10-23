@@ -14,6 +14,8 @@ const end_stats = document.getElementById("end_stats");
 const home_button = document.getElementById("home_button");
 const play_again_button = document.getElementById("play_again_button");
 const diver1_button = document.getElementById("diver1_button");
+const diver2_button = document.getElementById("diver2_button");
+
 
 //Start Background Image
 const decorated_background = new Image();
