@@ -30,4 +30,4 @@ Team Members: Lindsey Kartvedt, Charly Wollaston, and Salama Sissoko
 	
 5. NOTE TO GRADER:
 	Images are being hosted on imgur. This compresses the images. The grader will need to have internet connection to play the game.
-
+	Diver2's uper bound is off by a few pixels.
