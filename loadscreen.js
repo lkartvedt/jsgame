@@ -14,7 +14,7 @@ $(function () {
     setTimeout(function () {
       btn.addClass("btn__complete");
 	  $(".container").hide();
-	  //$(".game").show();
+	  $(".game").show();
 	  $(".select").show();
     }, 4400);
   });
