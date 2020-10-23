@@ -10,6 +10,7 @@
       <link rel="stylesheet" type="text/css" href="cavediver.css">
       <link rel="stylesheet" type="text/css" href="darkmodeswitch.css">
 	  <link rel="stylesheet" type="text/css" href="selectionScreen.css">
+	  <link rel="stylesheet" type="text/css" href="index.css">
     </head> 
 
     <body>
@@ -22,7 +23,7 @@
 		<img id="DiverA" src="images/maleColor2R.png" width="100" height="50">
 	</div> -->
 	<div class='container'>
-	  <h1>Cave Diver</h1>
+	  <h1 id="title">Cave Diver</h1>
 	  <div class='btn'>Enter the Cave</div>
 	</div>
 	<div class="game">
@@ -49,7 +50,7 @@
         <button id="diver1_button" onclick="diver1Selected()">Diver 1</button>
         <button id="diver2_button" onclick="diver2Selected()">Diver 2</button>
 
-        <h1>Cave Diver<h1>
+        <h1 id="title">Cave Diver<h1>
 
         <canvas id="mycanvas" width="800" height="464">
           Your browser does not support the canvas element.
@@ -66,7 +67,8 @@
        </footer>
 	   
 	   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-      <script src="loadscreen.js"></script> 
+	   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+       <script src="loadscreen.js"></script> 
 <!-- 	   <script src="selectionScreen.js"></script> -->
        <script src="cavediver.js"></script>
 <!-- 	   <script src="background.js"></script> -->

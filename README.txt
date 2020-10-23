@@ -7,7 +7,7 @@ Team Members: Lindsey Kartvedt, Charly Wollaston, and Salama Sissoko
 	and canvas tag. Stylistic features are placed in appropriate external stylesheets. The game logic is complex enough to require a sufficient amount 
 	of JavaScript.  
 	
-	The game is fun to play as the user is able to move in all directions whilst attempting to avoid cave walls. Collecting coins and trying to win by []
+	The game is fun to play as the user is able to move in all directions whilst attempting to avoid cave walls. Collecting coins and timed distance
 	motivate the player to win and achieve a higher score and explore more of the cave.
 
 
@@ -18,7 +18,7 @@ Team Members: Lindsey Kartvedt, Charly Wollaston, and Salama Sissoko
 
 
 3. Did you use any cool JavaScript libraries? 
-	The JavaScript libraries used were []. These allowed for []
+	The JavaScript libraries used were anime.js. These allowed for aimations of our text.
 
 
 4.What nifty features of your program were a bear to implement?
