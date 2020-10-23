@@ -4,6 +4,7 @@ var bgx = 0;
 var t = 0;
 var scale = 26;
 var interval_ID = 0;
+var button_click = false;
 //load image onto canvas
 const canvas = document.getElementById("mycanvas");
 const ctx = canvas.getContext("2d");
@@ -12,6 +13,7 @@ const start_button = document.getElementById("start_button");
 const end_stats = document.getElementById("end_stats");
 const home_button = document.getElementById("home_button");
 const play_again_button = document.getElementById("play_again_button");
+const diver1_button = document.getElementById("diver1_button");
 
 //Start Background Image
 const decorated_background = new Image();
@@ -22,9 +24,17 @@ decorated_background.onload = () =>{
 }
 
 //Diver 1
-const diver = new Image();
-diver.setAttribute('crossOrigin', 'Anonymous')
-diver.src = "https://i.imgur.com/wW2etM4.png"; //male_color_1.PNG
+const diver1 = new Image();
+diver1.setAttribute('crossOrigin', 'Anonymous')
+diver1.src = "https://i.imgur.com/wW2etM4.png"; //male_color_1.PNG
+
+//Diver 2
+const diver2 = new Image();
+diver2.setAttribute('crossOrigin', 'Anonymous')
+diver2.src = "https://i.imgur.com/FJc6tu3.png"; //male_color_2.PNG
+
+//Diver
+var diver = diver1; //default
 
 //Cave Walls
 const  b1 = new Image(); b1.setAttribute('crossOrigin', 'Anonymous'); b1.src = "https://i.imgur.com/zV5hCVX.png";
@@ -56,11 +66,35 @@ var bottom_b_indices = [2, 3];
 var diver_points_x = [0, 251, 1646, 2048, 1895, 1523, 67];
 var diver_points_y = [388, 826, 638, 376, 235, 192, 325];
 
-function startGame() {
-  start_button.style.display = "none";
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  interval_ID = setInterval(renderScene, 16.667);
+function selectCharacter(){
+	start_button.style.display = "none";
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+	diver1_button.style.display = "block";
+	diver2_button.style.display = "block";
+
+	ctx.drawImage(diver1, 150, 150, diver1.width / 9, diver1.height / 9);
+	ctx.drawImage(diver2, 400, 140, diver2.width / 11, diver2.height / 11);
+}
+
+function diver1Selected(){
+	diver = diver1;
+	startGame();
+}
+
+function diver2Selected(){
+	diver = diver2;
+	startGame();
+}
+
+function startGame() {
+	diver1_button.style.display = "none";
+	diver2_button.style.display = "none";
+	start_button.style.display = "none";
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+	interval_ID = setInterval(renderScene, 16.667);
 }
 
 function resetGame(){
@@ -73,6 +107,7 @@ function resetGame(){
 	top_b_indices = [0, 1];
 	bottom_b_indices = [2, 3];
 	top_indices = [0, 1];
+	bottom_indices = [2, 3];
 
   	end_stats.style.display = "none";
   	play_again_button.style.display = "none";

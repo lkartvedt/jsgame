@@ -129,6 +129,56 @@ h2{
     margin-top: 75px;
 }
 
+#diver1_button {
+    background: #051a2a;
+    width: 175px;
+    height: 50px;
+    padding: 15px;
+    color: white;
+    border-radius: 3em;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline:none;
+    margin: auto;
+    display: none;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: 75px;
+}
+
+#diver2_button {
+    background:  #051a2a;
+    width: 175px;
+    height: 50px;
+    padding: 15px;
+    color: white;
+    border-radius: 3em;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline:none;
+    margin: auto;
+    display: none;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 75px;
+    margin-left: 25px;
+}
+
 #end_stats {
     background: white;
     opacity: 0.9;
